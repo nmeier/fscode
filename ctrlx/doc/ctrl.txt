@@ -1,0 +1,46 @@
+ctrl - Version 1.0
+===================
+
+Use Joystick and keyboard inputs for advanced Flight Simulator events not possible to bind to inputs ootb.
+
+Installation:
+-------------
+
+This module comes in a Flight Simulator FSX version.
+
+ FSX
+ -------
+ 
+ Install FSX SP2 - otherwise the module might not work on first startup:
+ 
+  http://www.fsinsider.com/downloads/Pages/FlightSimulatorXServicePack2.aspx
+ 
+ Copy the following file into the module-directory of your local Flight Simulator 
+ installation (C:\Program Files\Microsoft Games\Microsoft Flight Simulator X\Modules)
+
+  ctrlx.dll 
+
+ Then open this file in a text editor (e.g. notepad) - on Windows XP
+ 
+  C:\Documents and Settings\[your username]\Application Data\Microsoft\FSX\dll.xml
+  
+ on Windows Vista
+ 
+  C:\Users\[your username]\AppData\Roaming\Microsoft\FSX\dll.xml
+  
+ and add the following lines before the last line like so
+ 
+     ....
+     <Launch.Addon>
+        <Name>CtrlX</Name>
+        <Disabled>False</Disabled>
+        <Path>.\modules\ctrlx.dll</Path>
+        <Commandline/>
+    </Launch.Addon>
+   </SimBase.Document>
+ 
+ After starting Flight Simulator X confirm that you want to run CtrlX.dll
+ and have FSX remember that decision.
+  
+
+ Enjoy!

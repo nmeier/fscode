@@ -1,0 +1,51 @@
+Launcher - Version 1.0
+======================
+
+Launch applications from flight-simulator menu items
+Author  : Nils Meier
+email   : nils.meier@gmail.com
+homepage: http://code.google.com/p/fscode
+
+Installation:
+------------
+
+ Copy launcher.dll into the module-directory of your local Flight 
+ Simulator installation - normally:
+
+  c:\Program Files\Microsoft Games\Flight Simulator 9\Modules
+  
+ Copy launcher.ini into the same module-directory and edit file
+ for applications to launch.
+
+ Enjoy!
+
+Uninstall:
+----------
+
+ Delete launcher.dll from your module-directory of your local Flight
+ Simulator installation (see Installation).
+
+License:
+--------
+
+ This Flight Simulator Module is Freeware. Copyright (C) Nils Meier.
+ You can distribute this archive in its original released form. NO
+ charge may be made for this archive whether as-is or repackaged in
+ another archive.
+
+ Disclaimer: RealTrim should work and has been tested by the author
+ but use it at your own risk ... boilerplate follows:
+
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
+ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+

@@ -63,7 +63,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="version.lib dinput.lib dxguid.lib"
+				AdditionalDependencies="version.lib dinput8.lib dxguid.lib"
 				LinkIncremental="2"
 				EmbedManagedResourceFile=""
 				AssemblyLinkResource=""

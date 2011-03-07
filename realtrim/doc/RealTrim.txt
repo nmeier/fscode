@@ -1,0 +1,151 @@
+RealTrim - Version 1.7
+======================
+
+Activate the trimming-feature via button while moving the joystick from deflection 
+to neutral. The movement of the joystick is  converted into the opposite amount of 
+movement of the trim-wheel. This matches real-life where the pilot trims out force 
+felt on the yoke in ONE smooth operation - there's no need to chase the correct
+attitude a second time with trim buttons. 
+
+Author  : Nils Meier
+email   : nils.meier@gmail.com
+homepage: http://code.google.com/p/fscode/wiki/RealTrim
+
+Installation:
+------------
+
+This module comes in two versions - one for Flight Simulator 9/2004, the other for FSX.
+Please make sure to download the correct version and follow the exact steps below.
+
+ FS9/2004
+ --------
+ 
+ Copy the following file into the module-directory of your local Flight Simulator 
+ installation (c:\Program Files\Microsoft Games\Flight Simulator 9\Modules)
+ 
+  realtrim.dll 
+
+ FSX
+ -------
+
+ Install FSX SP2 - otherwise the module might not work on first startup:
+ 
+  http://www.fsinsider.com/downloads/Pages/FlightSimulatorXServicePack2.aspx
+  
+ Copy the following file into the module-directory of your local Flight Simulator 
+ installation (C:\Program Files\Microsoft Games\Microsoft Flight Simulator X\Modules)
+
+  realtrim.dll 
+
+ Then open this file in a text editor (e.g. notepad) - on Windows XP
+ 
+  C:\Documents and Settings\[your username]\Application Data\Microsoft\FSX\dll.xml
+  
+ on Windows Vista
+ 
+  C:\Users\[your username]\AppData\Roaming\Microsoft\FSX\dll.xml
+  
+ and add the following lines before the last line like so
+ 
+     ....
+     <Launch.Addon>
+        <Name>RealTrim</Name>
+        <Disabled>False</Disabled>
+        <Path>.\modules\realtrim.dll</Path>
+        <Commandline/>
+    </Launch.Addon>
+   </SimBase.Document>
+ 
+ After starting Flight Simulator X confirm that you want to run realtrim.dll
+ and have FSX remember that decision.
+  
+
+ Enjoy!
+
+Uninstall:
+----------
+
+ Delete RealTrim.dll from your module-directory of your local Flight
+ Simulator installation (see Installation).
+
+How To Use RealTrim:
+--------------------
+
+ For normal operations simply use the joystick as usual putting the 
+ plane into the desired pitch configuration (e.g. pulling on the stick 
+ for 10 deg pitch). Then press and hold the trim-key and smoothly move 
+ the joystick back into its neutral position.
+      
+License:
+--------
+
+ This Flight Simulator Module is Freeware. Copyright (C) Nils Meier.
+ You can distribute this archive in its original released form. NO
+ charge may be made for this archive whether as-is or repackaged in
+ another archive.
+
+ Disclaimer: RealTrim should work and has been tested by the author
+ but use it at your own risk ... boilerplate follows:
+
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
+ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Change Log:
+------------
+
+ 20100901 - 1.7 - Compatibility Release
+ 
+  + add Timer switch to force simconnect poll (reported not working on Windows 7)
+
+ 20100726 - 1.6 - Compatibility Release
+ 
+  + recompile against DirectX 11 (8) to correct button interaction problem on Windows 7
+
+ 20081128 - 1.3 0 Bug Fix Release
+
+  + fixed a bug in handling hidden menubar leading to fsim lockup
+
+ 20080312 - 1.2 - Stable Release
+ 
+  + removed key as trim input (button only)
+  + added option for trimming via mouse wheel
+  + calculate applicable trim for current plane based on airfile information
+  + use ATIS text for user interaction
+
+ 20060216 - 1.1 - Stable Release
+ 
+  + removed nodirectinput=1 warning message
+  + support joystick button of up to 8 joysticks
+  + workaround for stuck joystick button on poll in key-prompt
+  
+ 20060201 - 1.0 - Stable Release
+
+  + calculate fs's trim increments on aircraft load before adjusting
+
+ 20060124ff - 0.9ff - Proof of Concept Upgrades
+ 
+  + added option to adjust trim increments based on effectiveness
+  + any joystick button (1st device) can be used as trim key now
+  + changed default trim effectiveness to 3.0
+  + trim key events are now passed through to fs so one can trim
+    with a key as well as use it for other fs actions
+  + current trim effectiveness is shown when adjusting for new value
+  + suffix Paint* is now trimmed of aircraft title when using it
+    as key to store trim effectiveness (beta users might have
+    to re-assign trim effectivness for their custom planes)
+  + added missing default trim sensitivity for Skylane 182s
+  + configurable trim frequency in ini file (default 20hz, min 10hz)
+    [RealTrim]
+    TrimFrequency=20
+    
+ 20060124 - 0.9  - Initial Proof of Concept Release for Testing and Feedback

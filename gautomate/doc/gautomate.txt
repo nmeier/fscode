@@ -1,0 +1,59 @@
+GAutomate - Version 1.2
+=======================
+
+GAutomate maps joysticks/keyboard actions to mouse manipulations on the actual gauge 
+in the simulator. Opposite to other "key to mouse" translations GAutomate doesn't 
+require the gauge (or its containing panel) to be visible. As long as Flight Simulator 
+loads that gauge it's accessible and GAutomate will perform click, move and dragging 
+operations as configured. 
+
+Author  : Nils Meier
+email   : nils.meier@gmail.com
+homepage: http://code.google.com/p/fscode/wiki/GAutomate
+
+Installation:
+------------
+
+ Copy GAutomate.dll into the module-directory of your local Flight 
+ Simulator installation - normally:
+
+  c:\Program Files\Microsoft Games\Flight Simulator 9\Modules
+
+ Enjoy!
+
+Uninstall:
+----------
+
+ Delete GAutomate.dll from your module-directory of your local Flight
+ Simulator installation (see Installation).
+
+How To Use GAutomate:
+--------------------
+
+ Consult and edit supplied gautomate.ini for your own customizations
+ and place alongside GAutomate.dll
+      
+License:
+--------
+
+ This Flight Simulator Module is Freeware. Copyright (C) Nils Meier.
+ You can distribute this archive in its original released form. NO
+ charge may be made for this archive whether as-is or repackaged in
+ another archive.
+
+ Disclaimer: RealTrim should work and has been tested by the author
+ but use it at your own risk ... boilerplate follows:
+
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS
+ OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+ LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+ OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+

@@ -27,7 +27,7 @@ HWND FSC_GetFlightSimWindow();
 struct {
 	int num;
 	char jName[FSC_MAX_JOYSTICKS][256];
-	IDirectInputDevice* pJoystick[FSC_MAX_JOYSTICKS];
+	IDirectInputDevice8* pJoystick[FSC_MAX_JOYSTICKS];
 	DIJOYSTATE2 currentState[FSC_MAX_JOYSTICKS];
 	DIJOYSTATE2 lastState[FSC_MAX_JOYSTICKS];
 } DirectInput = { -1 };
@@ -43,7 +43,7 @@ static BOOL FAR PASCAL DirectInputInitLoop(LPCDIDEVICEINSTANCEA pDevice, LPVOID 
 
 	FSC_Log("Found Joystick %s", pDevice->tszInstanceName);
 
-	LPDIRECTINPUT pDirectInput = (LPDIRECTINPUT)pUserData;
+	LPDIRECTINPUT8 pDirectInput = (LPDIRECTINPUT8)pUserData;
 
 	// try to grab device/joystick
 	if (FAILED(pDirectInput->CreateDevice(pDevice->guidInstance, &DirectInput.pJoystick[DirectInput.num], NULL))) {
@@ -101,12 +101,13 @@ static void DirectInputInit() {
 	memset(&DirectInput, 0x00, sizeof(DirectInput));
 
 	// connect to dinput
-	LPDIRECTINPUT pDirectInput; 
+	LPDIRECTINPUT8 pDirectInput; 
 	if (FAILED(DirectInput8Create(FSC_GetModuleHandle(), DIRECTINPUT_VERSION, IID_IDirectInput8A, (LPVOID*) &pDirectInput, NULL))) {
  		FSC_Log("DirectInputInit:DirectInputCreate failed");
  		return;
  	}
 
+	
 	// find joysticks DI8DEVCLASS_GAMECTRL DI8DEVTYPE_JOYSTICK
 	pDirectInput->EnumDevices(DI8DEVCLASS_GAMECTRL, &DirectInputInitLoop, pDirectInput, DIEDFL_ATTACHEDONLY);
 	if (DirectInput.num==0) 
@@ -122,10 +123,14 @@ static bool DirectInputPollJoystick(int joy) {
 	// ensure initialized
 	DirectInputInit();
 	// valid argument?
-	if (joy>=DirectInput.num)
+	if (joy>=DirectInput.num) {
 		return false;
+	}
 	// poll now
-	if (FAILED(DirectInput.pJoystick[joy]->GetDeviceState(sizeof(DIJOYSTATE2), &DirectInput.currentState[joy]))) {
+	DirectInput.pJoystick[joy]->Poll();
+	// get device state
+	HRESULT result = DirectInput.pJoystick[joy]->GetDeviceState(sizeof(DIJOYSTATE2), &DirectInput.currentState[joy]);
+	if (FAILED(result)) {
 		if (FAILED(DirectInput.pJoystick[joy]->Acquire()))
 			FSC_Log("Couldn't read device state and then Re-aquire Joystick");
 		return false;

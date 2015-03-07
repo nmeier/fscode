@@ -1,23 +1,23 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C++ Express 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "realtrim", "realtrim\realtrim.vcproj", "{EE2CFF2F-2558-4244-A7E1-24A3603B91A8}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "realtrim", "realtrim\realtrim.vcxproj", "{EE2CFF2F-2558-4244-A7E1-24A3603B91A8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pdfkneeboard", "pdfkneeboard\pdfkneeboard.vcproj", "{8690FAE3-C706-44DB-8598-8B5740E07E6F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pdfkneeboard", "pdfkneeboard\pdfkneeboard.vcxproj", "{8690FAE3-C706-44DB-8598-8B5740E07E6F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pdfkneeboard-app", "pdfkneeboard\pdfkneeboard-app.vcproj", "{DBE6252A-6611-4CBF-BB62-15C225723682}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pdfkneeboard-app", "pdfkneeboard\pdfkneeboard-app.vcxproj", "{DBE6252A-6611-4CBF-BB62-15C225723682}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gautomate", "gautomate\gautomate.vcproj", "{185E4649-FD89-44DE-B1F0-EEE60D817CE0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gautomate", "gautomate\gautomate.vcxproj", "{185E4649-FD89-44DE-B1F0-EEE60D817CE0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "realtrimx", "realtrim\realtrimx.vcproj", "{9F4DB4A0-C4AA-441C-A07F-42A6E43DDBE4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "realtrimx", "realtrim\realtrimx.vcxproj", "{9F4DB4A0-C4AA-441C-A07F-42A6E43DDBE4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "realtrimxapp", "realtrim\realtrimxapp.vcproj", "{44F3B355-E2C5-48A5-AC2F-DDDCBB3621D6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "realtrimxapp", "realtrim\realtrimxapp.vcxproj", "{44F3B355-E2C5-48A5-AC2F-DDDCBB3621D6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pdfkneeboardx", "pdfkneeboard\pdfkneeboardx.vcproj", "{E7FFF7AC-021E-4A27-949A-B11910CC1F2A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pdfkneeboardx", "pdfkneeboard\pdfkneeboardx.vcxproj", "{E7FFF7AC-021E-4A27-949A-B11910CC1F2A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "launcher", "launcher\launcher.vcproj", "{7743CF58-5E7D-44D8-B41B-A114A980EE7C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "launcher", "launcher\launcher.vcxproj", "{7743CF58-5E7D-44D8-B41B-A114A980EE7C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ctrlx", "ctrlx\ctrlx.vcproj", "{DA659E51-1E4F-4209-B3B8-4C3D60BFFB2E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ctrlx", "ctrlx\ctrlx.vcxproj", "{DA659E51-1E4F-4209-B3B8-4C3D60BFFB2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

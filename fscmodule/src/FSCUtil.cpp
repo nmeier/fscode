@@ -1,6 +1,8 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <windows.h>
+#include <Shlobj.h>
+#include <Dbghelp.h>
 
 #include "FSCUtil.h"
 
@@ -38,13 +40,27 @@ char* FSC_CalculatePath(char* pszDest, int iDestLen, char* base, char* path)
 	return pszDest;
 }
 
+void AppLocalFile(char* dest, int destlen, char* file, char* extension) {
+
+	char tmp[MAX_PATH];
+
+	// try appdata folder, then module folder
+	if (SUCCEEDED(SHGetFolderPath(NULL, CSIDL_LOCAL_APPDATA|CSIDL_FLAG_CREATE, NULL, 0, tmp))) {
+		sprintf_s(dest, destlen, "%s\\%s\\%s.%s", tmp, FSC_GetModuleName(), file, extension);
+	} else {
+		sprintf_s(tmp, sizeof(tmp), "modules\\%s.%s", file, extension);
+		FSC_CalculatePath(dest, destlen, NULL, tmp);
+	}
+
+	MakeSureDirectoryPathExists(dest);
+}
 
 /**
  * Logging
  */
 void FSC_LogVA(char* message, va_list parms) {
 
-	static FILE* pLogFile;
+	static FILE* file;
 
 #ifdef _DEBUG
 	#pragma message ("*********************************************************")
@@ -61,18 +77,19 @@ void FSC_LogVA(char* message, va_list parms) {
 
 	if (FSC_ReadBoolFromProfile("Logging", false))
 	{
-		if (pLogFile==NULL)
+		if (file==NULL)
 		{
 			char path[MAX_PATH];
-			sprintf_s(path, sizeof(path), "modules\\%s.log", FSC_GetModuleName());
-			char cLogFile[MAX_PATH];
-			FSC_CalculatePath(cLogFile, sizeof(cLogFile), NULL, path);
-			fopen_s(&pLogFile, cLogFile, "wb");
+			AppLocalFile(path, sizeof(path), FSC_GetModuleName(), "log");
+			fopen_s(&file, path, "wb");
 		}
-		fprintf(pLogFile, "%s:", FSC_GetModuleName());
-		vfprintf(pLogFile, message, parms); 
-		fwrite("\r\n", sizeof(char), 2, pLogFile); 
-		FlushFileBuffers(pLogFile); 
+		if (file!=NULL)
+		{
+			fprintf(file, "%s:", FSC_GetModuleName());
+			vfprintf(file, message, parms); 
+			fwrite("\r\n", sizeof(char), 2, file); 
+			FlushFileBuffers(file); 
+		}
 	}
 }
 
@@ -90,19 +107,20 @@ void FSC_Log(char* message, ... ) {
  */
 char* IniFile() 
 {
-	static char cIniFile[MAX_PATH]; // ini filename
+	static char path[MAX_PATH]; // ini filename
 
 	// lazy calculation
-	if (cIniFile[0]=='\0')
+	if (path[0]=='\0')
 	{
-		char path[MAX_PATH];
-		sprintf_s(path, sizeof(path), "modules\\%s.ini", FSC_GetModuleName());
-		char cLogFile[MAX_PATH];
-		FSC_CalculatePath(cIniFile, sizeof(cLogFile), NULL, path);
+		AppLocalFile(path, sizeof(path), FSC_GetModuleName(), "ini");
+
+
+		// prep it
+		FSC_WriteBoolToProfile("Logging", FSC_ReadBoolFromProfile("Logging", false));
 	}
 
 	// done
-	return cIniFile;
+	return path;
 }
 
 #define ASSUME_INT(v) if (v==0 || v==LONG_MAX || v==LONG_MIN) return false;
@@ -120,7 +138,7 @@ void FSC_ReadStringFromProfile(const char* section, const char* key, char* presu
 bool FSC_ReadRectFromProfile(char* iniKey, RECT* r) 
 {
 	char value[256];
-	GetPrivateProfileString(FSC_GetModuleName(), iniKey, "", value, sizeof(value), IniFile());
+	FSC_ReadStringFromProfile(iniKey, "", value, sizeof(value), IniFile());
 	if (strlen(value)==0)
 		return false;
 
@@ -154,7 +172,7 @@ void FSC_WriteRectToProfile(char* iniKey, RECT* r)
 long FSC_ReadHexFromProfile(char* iniKey, long fallback) 
 {
 	char buf[16];
-	GetPrivateProfileString(FSC_GetModuleName(), iniKey, "", buf, sizeof(buf), IniFile());
+	FSC_ReadStringFromProfile(iniKey, "", buf, sizeof(buf), IniFile());
 	if (strlen(buf)==0)
 		return fallback;
 	long result = strtol(buf, NULL, 16);

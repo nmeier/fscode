@@ -133,11 +133,12 @@ void realtrim_trim(REALTRIM* pRealtrim, double elevatorDeflection, double trimDe
 	// waiting for button?
 	if (pRealtrim->state==WAITINGFORBUTTON)
 	{
+FSC_Log("REMOVE:Still waiting for button");
 		// button?
 		int btn = FSC_TestAnyButton();
 		if (btn!=FSC_NO_BUTTON) 
 		{
-			FSC_Log("Got trim button");
+			FSC_Log("Got trim button %d", btn);
 			pRealtrim->trimButton = btn;
 			FSC_WriteHexToProfile(INI_KEY_TRIMBTN, btn);
 

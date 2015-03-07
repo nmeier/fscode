@@ -2,6 +2,15 @@
  * FSC X Module Abstraction
  *
  * Linker dependencies: version.lib dinput.lib dinput8.lib dxguid.lib
+ *
+ *
+ * 10.0.60905.0 FSX Original
+ * 10.0.61355.0 ?
+ * 10.0.61242.0 FSX SP1
+ * 10.0.61259.0 FSX SP2
+ * 10.0.61637.0 FSX-Xpack.20070926-1421 (FSX ACC)
+ * 10.0.62608.0 FSX.20150106-1314 (FSX Steam Edition, also 62607)
+ *
  */
 
 #include "windows.h"
@@ -9,6 +18,13 @@
 #include "SimConnect.h"
 
 #include "FSCUtil.h"
+
+extern "C" {
+	HRESULT (__stdcall *pSimConnect_Open)(HANDLE * phSimConnect, LPCSTR szName, HWND hWnd, DWORD UserEventWin32, HANDLE hEventHandle, DWORD ConfigIndex);
+	HRESULT (__stdcall *pSimConnect_Close)(HANDLE hSimConnect);
+	HRESULT (__stdcall *pSimConnect_CallDispatch)(HANDLE hSimConnect, DispatchProc pfcnDispatch, void * pContext);
+}
+
 
 /** callbacks */
 void FSC_CALLBACK_ModuleLoaded(HANDLE hSim);

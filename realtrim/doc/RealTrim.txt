@@ -1,5 +1,5 @@
-RealTrim - Version 1.7
-======================
+RealTrim
+========
 
 Activate the trimming-feature via button while moving the joystick from deflection 
 to neutral. The movement of the joystick is  converted into the opposite amount of 
@@ -28,7 +28,7 @@ Please make sure to download the correct version and follow the exact steps belo
  FSX
  -------
 
- Install FSX SP2 - otherwise the module might not work on first startup:
+ Install FSX SP2:
  
   http://www.fsinsider.com/downloads/Pages/FlightSimulatorXServicePack2.aspx
   
@@ -37,13 +37,12 @@ Please make sure to download the correct version and follow the exact steps belo
 
   realtrim.dll 
 
- Then open this file in a text editor (e.g. notepad) - on Windows XP
+ You might have to have administrator rights to do so.
+
+ Then open this file in a text editor (e.g. notepad)
  
-  C:\Documents and Settings\[your username]\Application Data\Microsoft\FSX\dll.xml
-  
- on Windows Vista
- 
-  C:\Users\[your username]\AppData\Roaming\Microsoft\FSX\dll.xml
+  Windows XP    : C:\Documents and Settings\[your username]\Application Data\Microsoft\FSX\dll.xml
+  Windows Vista : C:\Users\[your username]\AppData\Roaming\Microsoft\FSX\dll.xml
   
  and add the following lines before the last line like so
  
@@ -56,9 +55,9 @@ Please make sure to download the correct version and follow the exact steps belo
     </Launch.Addon>
    </SimBase.Document>
  
- After starting Flight Simulator X confirm that you want to run realtrim.dll
+ After starting Flight Simulator X you should be prompted to confirm that you want to run realtrim.dll
  and have FSX remember that decision.
-  
+ 
 
  Enjoy!
 
@@ -71,11 +70,20 @@ Uninstall:
 How To Use RealTrim:
 --------------------
 
- For normal operations simply use the joystick as usual putting the 
- plane into the desired pitch configuration (e.g. pulling on the stick 
- for 10 deg pitch). Then press and hold the trim-key and smoothly move 
- the joystick back into its neutral position.
-      
+ After entering the sim world select "Modules|Realtrim|Trim &Button..." from the menu bar, press
+ the desired trim button on any of your joysticks.
+
+ For normal operations then simply use the joystick as usual putting the plane into the desired 
+ pitch configuration (e.g. pulling on the stick for 10 deg pitch). Then press and hold the 
+ trim-button and smoothly move the joystick back into its neutral position.
+
+ Realtrim will move the trim tab accordingly as long as the trim button is pressed.
+
+ Note: Realtrim reads and writes to ini and log file (with Logging=1) in
+
+  Windows XP    : [Flight Simulator installation directory]/modules
+  Windows Vista : %LOCALAPPDATA%\realtrim (typically C:\Users\[your username]\AppData\Local\realtrim)
+     
 License:
 --------
 
@@ -102,6 +110,11 @@ License:
 
 Change Log:
 ------------
+
+ 20150306 - 1.8 - Micro Update
+
+  + Fix issue with Game Port joystick that needs to be polled
+  + Fix issue with not being able to write ini and log files into program folder/modules
 
  20100901 - 1.7 - Compatibility Release
  

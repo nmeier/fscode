@@ -44,8 +44,8 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\$(Configuration)\$(ProjectName)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)\Lib\x86;X:\Microsoft Visual Studio\SimConnect;C:\Program Files (x86)\Microsoft Games\Microsoft Flight Simulator X\SDK\SDK\Core Utilities Kit\SimConnect SDK\lib;$(LibraryPath)</LibraryPath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">X:\Microsoft Visual Studio\SimConnect;C:\Program Files (x86)\Microsoft Games\Microsoft Flight Simulator X\SDK\SDK\Core Utilities Kit\SimConnect SDK\inc;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)\Lib\x86;C:\Program Files (x86)\Microsoft Games\Microsoft Flight Simulator X\SDK\SDK\Core Utilities Kit\SimConnect SDK\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files (x86)\Microsoft Games\Microsoft Flight Simulator X\SDK\SDK\Core Utilities Kit\SimConnect SDK\inc;$(IncludePath)</IncludePath>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">realtrim</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

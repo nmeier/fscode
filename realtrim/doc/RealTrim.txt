@@ -26,18 +26,32 @@ Please make sure to download the correct version and follow the exact steps belo
   realtrim.dll 
 
  FSX
- -------
+ ---
 
- Install FSX SP2:
+ For FSX Gold/Original:
+
+   Make sure to install FSX SP2 
  
-  http://www.fsinsider.com/downloads/Pages/FlightSimulatorXServicePack2.aspx
+     http://www.fsinsider.com/downloads/Pages/FlightSimulatorXServicePack2.aspx
+
+   Copy realtrim.dll into the module-directory of your local Flight Simulator installation 
+ 
+     C:\Program Files\Microsoft Games\Microsoft Flight Simulator X\Modules
+
+   You might have to have administrator rights to do so.
+
+ For FSX Steam Edition:
+ 
+   Install all simconnect libraries simconnect.msi (1 current, 3 legacy) from 
+
+     C:\Steam\steamapps\common\FSX\SDK\Core Utilities Kit\SimConnect SDK\LegacyInterfaces (FSX-RTM, FSX-SP1, FSX-XPACK)
+     C:\Steam\steamapps\common\FSX\SDK\Core Utilities Kit\SimConnect SDK\LIB
   
- Copy the following file into the module-directory of your local Flight Simulator 
- installation (C:\Program Files\Microsoft Games\Microsoft Flight Simulator X\Modules)
+   Copy realtrim.dll into the module-directory of your Steam Flight Simulator installation 
+ 
+      C:\Steam\steamapps\common\FSX
 
-  realtrim.dll 
-
- You might have to have administrator rights to do so.
+   You might have to have administrator rights to do so.
 
  Then open this file in a text editor (e.g. notepad)
  
@@ -57,7 +71,6 @@ Please make sure to download the correct version and follow the exact steps belo
  
  After starting Flight Simulator X you should be prompted to confirm that you want to run realtrim.dll
  and have FSX remember that decision.
- 
 
  Enjoy!
 
@@ -115,6 +128,7 @@ Change Log:
 
   + Fix issue with Game Port joystick that needs to be polled
   + Fix issue with not being able to write ini and log files into program folder/modules
+  + Document FSX Steam Edition procedure
 
  20100901 - 1.7 - Compatibility Release
  

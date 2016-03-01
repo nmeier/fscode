@@ -127,7 +127,7 @@ char* IniFile()
 
 void FSC_ReadStringFromProfile(const char* key, char* presult, int lenresult, char* fallback)
 {
-	FSC_ReadStringFromProfile(FSC_GetModuleName(), key, presult, lenresult, fallback);
+	FSC_ReadStringFromProfile(NULL, key, presult, lenresult, fallback);
 }
 
 void FSC_ReadStringFromProfile(const char* section, const char* key, char* presult, int lenresult, char* fallback)
@@ -138,7 +138,7 @@ void FSC_ReadStringFromProfile(const char* section, const char* key, char* presu
 bool FSC_ReadRectFromProfile(char* iniKey, RECT* r) 
 {
 	char value[256];
-	FSC_ReadStringFromProfile(iniKey, "", value, sizeof(value), IniFile());
+	FSC_ReadStringFromProfile(iniKey, value, sizeof(value), "");
 	if (strlen(value)==0)
 		return false;
 
@@ -172,7 +172,7 @@ void FSC_WriteRectToProfile(char* iniKey, RECT* r)
 long FSC_ReadHexFromProfile(char* iniKey, long fallback) 
 {
 	char buf[16];
-	FSC_ReadStringFromProfile(iniKey, "", buf, sizeof(buf), IniFile());
+	FSC_ReadStringFromProfile(iniKey, buf, sizeof(buf), "");
 	if (strlen(buf)==0)
 		return fallback;
 	long result = strtol(buf, NULL, 16);

@@ -1,6 +1,12 @@
 #include "FSCModuleX.h"
 #include "FSCUtil.h"
 
+#define RC_INVOKED
+#include "math.h"
+
+extern "C" double hypot(double x, double y) {return _hypot(x, y);}
+
+
 #include "PDFView.h"
 #include "PDFKneeboard.h"
 

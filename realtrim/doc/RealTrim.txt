@@ -124,6 +124,10 @@ License:
 Change Log:
 ------------
 
+ 20160229 - 1.9 - Micro Update
+  
+  + Fix issue with ini file settings not being re-read correctly, trim button has to be reset if not button 0x0000
+
  20150306 - 1.8 - Micro Update
 
   + Fix issue with Game Port joystick that needs to be polled

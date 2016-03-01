@@ -1,5 +1,5 @@
-PDFKneeboard 1.8
-================
+PDFKneeboard
+============
 
 Every serious flight-simmer eventually ends up referring to charts for their
 flying adventures. Whether it's a VFR sectional or more likely an approach
@@ -146,4 +146,11 @@ License:
  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Change Log:
+------------
+
+  20160229 - 1.9 - Micro Update
+  
+  + Fix issue with ini file settings not being re-read correctly, window has to be resized after restart
 
